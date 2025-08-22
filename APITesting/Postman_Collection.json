@@ -1,0 +1,69 @@
+{
+  "info": {
+    "name": "Sample API Testing",
+    "_postman_id": "1234-5678-91011-1213",
+    "description": "Postman collection for testing login and user APIs",
+    "schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+  },
+  "item": [
+    {
+      "name": "Login - Valid",
+      "request": {
+        "method": "POST",
+        "header": [
+          {
+            "key": "Content-Type",
+            "value": "application/json"
+          }
+        ],
+        "body": {
+          "mode": "raw",
+          "raw": "{ \"email\": \"test@example.com\", \"password\": \"pass123\" }"
+        },
+        "url": {
+          "raw": "https://api.sample.com/login",
+          "protocol": "https",
+          "host": ["api", "sample", "com"],
+          "path": ["login"]
+        }
+      },
+      "response": []
+    },
+    {
+      "name": "Login - Invalid Password",
+      "request": {
+        "method": "POST",
+        "header": [
+          {
+            "key": "Content-Type",
+            "value": "application/json"
+          }
+        ],
+        "body": {
+          "mode": "raw",
+          "raw": "{ \"email\": \"test@example.com\", \"password\": \"wrongpass\" }"
+        },
+        "url": {
+          "raw": "https://api.sample.com/login",
+          "protocol": "https",
+          "host": ["api", "sample", "com"],
+          "path": ["login"]
+        }
+      },
+      "response": []
+    },
+    {
+      "name": "Get User by ID",
+      "request": {
+        "method": "GET",
+        "url": {
+          "raw": "https://api.sample.com/user/123",
+          "protocol": "https",
+          "host": ["api", "sample", "com"],
+          "path": ["user", "123"]
+        }
+      },
+      "response": []
+    }
+  ]
+}
